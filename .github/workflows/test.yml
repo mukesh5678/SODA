@@ -1,0 +1,17 @@
+   data_source my_datasource_name:
+     type: snowflake
+     username: ${ SNOWFLAKE_USER }
+     password: ${ SNOWFLAKE_PASS }
+     account: ${ SNOWFLAKE_ACCOUNT } 
+     database: sodadata_test
+     warehouse: compute_wh
+     role: analyst
+     session_parameters:
+       QUERY_TAG: soda-queries
+       QUOTED_IDENTIFIERS_IGNORE_CASE: false
+     schema: public
+      
+   soda_cloud:
+     host: cloud.us.soda.io
+     api_key_id: ${ SODA_CLOUD_API_KEY }
+     api_key_secret: ${ SODA_CLOUD_API_SECRET }
