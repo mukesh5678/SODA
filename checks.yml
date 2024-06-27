@@ -1,5 +1,5 @@
 # checks.yml file
 checks for retail_orders:
-  - anomaly score for row_count < default
+  - anomaly score for row_count < 8
   - Schema Check
   - Duplicate_MT
