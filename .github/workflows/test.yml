@@ -1,17 +1,24 @@
-   data_source my_datasource_name:
-     type: snowflake
-     username: mukesh789
-     password: Mukesh@1234
-     account: ${ SNOWFLAKE_ACCOUNT } 
-     database: sodadata_test
-     warehouse: compute_wh
-     role: analyst
-     session_parameters:
-       QUERY_TAG: soda-queries
-       QUOTED_IDENTIFIERS_IGNORE_CASE: false
-     schema: public
-      
-   soda_cloud:
-     host: cloud.us.soda.io
-     api_key_id: 5d407976-7091-4901-9fa5-80f947c7b18b
-     api_key_secret: r7Etzjhwqi_jc6VWAPkB9RX2b8waBHaQOz9ponJX4Ul91uzxlhSERw
+# This GitHub Action runs a Soda scan on a Snowflake data source called reporting_api_marts.
+ name: Run Soda Scan on [reporting_api_marts]
+ # GitHub triggers this job when a user creates or updates a pull request.
+ on: pull_request
+ jobs:
+ soda_scan:
+   runs-on: ubuntu-latest
+   name: Run Soda Scan
+   steps:
+     - name: Checkout
+       uses: actions/checkout@v3
+
+     - name: Perform Soda Scan
+       uses: sodadata/soda-github-action@main
+       env:
+         SODA_CLOUD_API_KEY: 5d407976-7091-4901-9fa5-80f947c7b18b
+         SODA_CLOUD_API_SECRET: r7Etzjhwqi_jc6VWAPkB9RX2b8waBHaQOz9ponJX4Ul91uzxlhSERw
+         SNOWFLAKE_USERNAME: mukesh789
+         SNOWFLAKE_PASSWORD: Mukesh@1234
+       with:
+         soda_library_version: v1.5.5
+         data_source: snowflake_api_marts
+         configuration: ./soda/configuration.yml
+         checks: ./soda/checks.yml
