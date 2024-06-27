@@ -2,8 +2,8 @@
 data_source snowflake:
   type: snowflake
   host: soda-demo
-  username: ${mukesh789}
-  password: ${Mukesh@1234}
+  username: mukesh789
+  password: Mukesh@1234
   database: DBMS
   schema: SCOTT
 # Refer to https://go.soda.io/api-keys
