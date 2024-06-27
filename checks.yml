@@ -1,4 +1,5 @@
 # checks.yml file
 checks for retail_orders:
-  - row_count > 0
-  - missing_count(order_quantity) < 3
+  - anomaly score for row_count < default
+  - Schema Check
+  - Duplicate_MT
