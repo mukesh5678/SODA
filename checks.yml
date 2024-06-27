@@ -1,5 +1,3 @@
 # checks.yml file
-checks for retail_orders:
-  - anomaly score for row_count < default
-  - Schema Check
-  - Duplicate_MT
+checks for CITY:
+  anomaly score for row_count < 0
