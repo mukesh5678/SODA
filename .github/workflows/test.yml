@@ -1,0 +1,17 @@
+   data_source my_datasource_name:
+     type: snowflake
+     username: mukesh789
+     password: Mukesh@1234
+     account: ${ SNOWFLAKE_ACCOUNT } 
+     database: sodadata_test
+     warehouse: compute_wh
+     role: analyst
+     session_parameters:
+       QUERY_TAG: soda-queries
+       QUOTED_IDENTIFIERS_IGNORE_CASE: false
+     schema: public
+      
+   soda_cloud:
+     host: cloud.us.soda.io
+     api_key_id: 5d407976-7091-4901-9fa5-80f947c7b18b
+     api_key_secret: r7Etzjhwqi_jc6VWAPkB9RX2b8waBHaQOz9ponJX4Ul91uzxlhSERw
