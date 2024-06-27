@@ -9,5 +9,5 @@ data_source snowflake:
 # Refer to https://go.soda.io/api-keys
 soda_cloud:
   host: cloud.us.soda.io
-  api_key_id: ${5d407976-7091-4901-9fa5-80f947c7b18b}
-  api_key_secret: ${r7Etzjhwqi_jc6VWAPkB9RX2b8waBHaQOz9ponJX4Ul91uzxlhSERw}
+  api_key_id: 5d407976-7091-4901-9fa5-80f947c7b18b
+  api_key_secret: r7Etzjhwqi_jc6VWAPkB9RX2b8waBHaQOz9ponJX4Ul91uzxlhSERw
