@@ -2,10 +2,12 @@
 data_source snowflake:
   type: snowflake
   host: soda-demo
+  account: yl32188.central-india.azure.snowflakecomputing.com
   username: mukesh789
   password: Mukesh@1234
   database: DBMS
   schema: SCOTT
+   warehouse: compute_wh
 # Refer to https://go.soda.io/api-keys
 soda_cloud:
   host: cloud.us.soda.io
