@@ -2,6 +2,8 @@
  name: Run Soda Scan on [reporting_api_marts]
  # GitHub triggers this job when a user creates or updates a pull request.
  on: pull_request
+ branches: 
+   - test_1
  jobs:
  soda_scan:
    runs-on: ubuntu-latest
