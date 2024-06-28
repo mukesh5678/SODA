@@ -1,26 +1,23 @@
-# This GitHub Action runs a Soda scan on a Snowflake data source called reporting_api_marts.
- name: Run Soda Scan on [DBMS]
- # GitHub triggers this job when a user creates or updates a pull request.
- on: pull_request
- branches: 
-   - test_1
- jobs:
- soda_scan:
-   runs-on: ubuntu-latest
-   name: Run Soda Scan
-   steps:
-     - name: Checkout
-       uses: actions/checkout@v3
+name: Scan for data quality
 
-     - name: Perform Soda Scan
-       uses: sodadata/soda-github-action@main
-       env:
-         SODA_CLOUD_API_KEY: 5d407976-7091-4901-9fa5-80f947c7b18b
-         SODA_CLOUD_API_SECRET: r7Etzjhwqi_jc6VWAPkB9RX2b8waBHaQOz9ponJX4Ul91uzxlhSERw
-         SNOWFLAKE_USERNAME: mukesh789
-         SNOWFLAKE_PASSWORD: Mukesh@1234
-       with:
-         soda_library_version: v1.5.5
-         data_source: snowflake_api_marts
-         configuration: ./SODA/configuration.yml
-         checks: ./SODA/checks.yml
+on: pull_request
+jobs:
+  soda_scan:
+    runs-on: ubuntu-latest
+    name: Run Soda Scan
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Perform Soda Scan
+        uses: sodadata/soda-github-action@v1
+        env:
+          SODA_CLOUD_API_KEY: 5d407976-7091-4901-9fa5-80f947c7b18b
+          SODA_CLOUD_API_SECRET: r7Etzjhwqi_jc6VWAPkB9RX2b8waBHaQOz9ponJX4Ul91uzxlhSERw
+          SNOWFLAKE_USERNAME: mukesh789
+          SNOWFLAKE_PASSWORD: Mukesh@1234
+        with:
+          soda_library_version: v1.0.4
+          data_source: snowflake
+          configuration: ./configuration.yml
+          checks: ./checks.yml
