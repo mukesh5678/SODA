@@ -1,5 +1,5 @@
 # This GitHub Action runs a Soda scan on a Snowflake data source called reporting_api_marts.
- name: Run Soda Scan on [reporting_api_marts]
+ name: Run Soda Scan on [DBMS]
  # GitHub triggers this job when a user creates or updates a pull request.
  on: pull_request
  branches: 
