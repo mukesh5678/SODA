@@ -1,5 +1,5 @@
 # configuration.yml file
-data_sources CITY:
+data_source snowflake:
   type: snowflake
   host: soda-demo
   account: yl32188.central-india.azure.snowflakecomputing.com
